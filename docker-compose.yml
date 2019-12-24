@@ -17,7 +17,7 @@ services:
       - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,grafana-piechart-panel,percona-percona-app,raintank-kubernetes-app,ntop-ntopng-datasource,natel-plotly-panel,camptocamp-prometheus-alertmanager-datasource,vonage-status-panel,fetzerch-sunandmoon-datasource,radensolutions-netxms-datasource
     volumes:
       - type: bind
-        source: /clusterfs/grafana
+        source: /mnt/grafana
         target: /var/lib/grafana
     networks:
       - grafana-net1
