@@ -58,9 +58,13 @@ docker push jamescarl20190101/docker-raspberry-pi-grafana:6.0.1
 # REF: https://hub.docker.com/r/grafana/grafana/
 # and http://docs.grafana.org/installation/configuration/
 
+# cert generation
+openssl genrsa -out grafana.key 2048
+openssl req -new -key grafana.key -out grafana.csr
+openssl x509 -req -days 365 -in grafana.csr -signkey grafana.key -out grafana.crt
+
 # Create the bind mount directories and copy files to the correct node based on constraints in the docker-compose!
 mkdir -p /mnt/grafana
-openssl req -x509 -newkey rsa:4096 -keyout grafana.key -out grafana.crt -days 365
 cp grafana.crt /mnt/grafana/
 cp grafana.key /mnt/grafana/
 cp ldap.toml /mnt/grafana/
