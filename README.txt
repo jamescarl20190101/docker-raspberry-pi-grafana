@@ -59,12 +59,12 @@ docker push jamescarl20190101/docker-raspberry-pi-grafana:6.0.1
 # and http://docs.grafana.org/installation/configuration/
 
 # Create the bind mount directories and copy files to the correct node based on constraints in the docker-compose!
-mkdir -p /opt/grafana
-cp grafana.crt /opt/grafana/
-cp grafana.key /opt/grafana/
-cp ldap.toml /opt/grafana/
-chown -R 472:472 /opt/grafana
-chmod a+rw -R /opt/grafana
+mkdir -p /mnt/grafana
+cp grafana.crt /mnt/grafana/
+cp grafana.key /mnt/grafana/
+cp ldap.toml /mnt/grafana/
+chown -R 472:472 /mnt/grafana
+chmod a+rw -R /mnt/grafana
 
 ##########
 # Deploy #
