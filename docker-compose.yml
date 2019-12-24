@@ -5,7 +5,8 @@ services:
   # REF: https://hub.docker.com/r/arm32v7/debian
   # REF: https://grafana.com/grafana/download/6.0.1?platform=arm
   grafana:
-    image: ernestgwilsonii/docker-raspberry-pi-grafana:6.0.1
+    #image: ernestgwilsonii/docker-raspberry-pi-grafana:6.0.1
+    image: grafana/grafana-arm32v7-linux:6.5.2
     hostname: grafana
     environment:
       - GF_SERVER_PROTOCOL=https
