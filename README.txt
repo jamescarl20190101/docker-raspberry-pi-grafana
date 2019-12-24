@@ -37,17 +37,17 @@ REF: https://grafana.com/grafana/download/6.0.1?platform=arm
 ###############################################################################
 # Docker build
 sudo bash
-time docker build --no-cache -t ernestgwilsonii/docker-raspberry-pi-grafana:6.0.1 -f Dockerfile.armhf .
+time docker build --no-cache -t jamescarl20190101/docker-raspberry-pi-grafana:6.0.1 -f Dockerfile.armhf .
 docker images
 
 # Verify 
-docker run -it -p 3000:3000 ernestgwilsonii/docker-raspberry-pi-grafana:6.0.1
+docker run -it -p 3000:3000 jamescarl20190101/docker-raspberry-pi-grafana:6.0.1
 # From another ssh session:
 #docker ps
 
 # Upload to Docker Hub
 docker login
-docker push ernestgwilsonii/docker-raspberry-pi-grafana:6.0.1
+docker push jamescarl20190101/docker-raspberry-pi-grafana:6.0.1
 ###############################################################################
 
 
