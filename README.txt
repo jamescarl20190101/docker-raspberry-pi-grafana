@@ -35,6 +35,9 @@ master
 REF: https://grafana.com/grafana/download/6.0.1?platform=arm
 
 ###############################################################################
+# Init
+mkdir -p /mnt/grafana/conf
+mkdir -p /mnt/grafana/lib/grafana
 # Docker build
 sudo bash
 time docker build --no-cache -t jamescarl20190101/docker-raspberry-pi-grafana:6.0.1 -f Dockerfile.armhf .
