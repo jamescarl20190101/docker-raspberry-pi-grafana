@@ -67,7 +67,7 @@ openssl x509 -req -days 365 -in grafana.csr -signkey grafana.key -out grafana.cr
 # mkdir -p /mnt/grafana
 mkdir -p /mnt/grafana/conf
 mkdir -p /mnt/grafana/lib/grafana
-cp default.ini /mnt/grafana/conf
+cp defaults.ini /mnt/grafana/conf/
 cp grafana.crt /mnt/grafana/lib/grafana
 cp grafana.key /mnt/grafana/lib/grafana
 cp ldap.toml /mnt/grafana/lib/grafana
