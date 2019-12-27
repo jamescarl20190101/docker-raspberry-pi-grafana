@@ -35,9 +35,6 @@ master
 REF: https://grafana.com/grafana/download/6.0.1?platform=arm
 
 ###############################################################################
-# Init
-mkdir -p /mnt/grafana/conf
-mkdir -p /mnt/grafana/lib/grafana
 # Docker build
 sudo bash
 time docker build --no-cache -t jamescarl20190101/docker-raspberry-pi-grafana:6.0.1 -f Dockerfile.armhf .
@@ -67,10 +64,13 @@ openssl req -new -key grafana.key -out grafana.csr
 openssl x509 -req -days 365 -in grafana.csr -signkey grafana.key -out grafana.crt
 
 # Create the bind mount directories and copy files to the correct node based on constraints in the docker-compose!
-mkdir -p /mnt/grafana
-cp grafana.crt /mnt/grafana/
-cp grafana.key /mnt/grafana/
-cp ldap.toml /mnt/grafana/
+# mkdir -p /mnt/grafana
+mkdir -p /mnt/grafana/conf
+mkdir -p /mnt/grafana/lib/grafana
+cp default.ini /mnt/grafana/conf
+cp grafana.crt /mnt/grafana/lib/grafana
+cp grafana.key /mnt/grafana/lib/grafana
+cp ldap.toml /mnt/grafana/lib/grafana
 chown -R 472:472 /mnt/grafana
 chmod a+rw -R /mnt/grafana
 
