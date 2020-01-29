@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-grafana
+  labels:
+    type: local
+    app: grafana
+    release: grafana-ui
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/opt/K8SPV/grafana"
