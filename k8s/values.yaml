@@ -193,9 +193,8 @@ extraContainers: |
 persistence:
   type: pvc
   enabled: true
-  # storageClassName: default
-  accessModes:
-    - ReadWriteOnce
+  storageClassName: "-"
+  accessModes:ReadWriteOnce
   size: 2Gi
   # annotations: {}
   finalizers:
